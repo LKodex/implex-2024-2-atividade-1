@@ -1,7 +1,6 @@
 import unittest
 from implex.sort import insertion
 
-@unittest.skip("Not implemented yet!")
 class TestInsertionSort(unittest.TestCase):
 
     def test_sort_descending_elements(self):
