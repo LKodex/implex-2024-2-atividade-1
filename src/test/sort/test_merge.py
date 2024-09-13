@@ -1,7 +1,6 @@
 import unittest
 from implex.sort import merge
 
-@unittest.skip("Not implemented yet!")
 class TestMergeSort(unittest.TestCase):
 
     def test_sort_descending_elements(self):
