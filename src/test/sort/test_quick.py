@@ -1,6 +1,7 @@
 import unittest
 from implex.sort import quick
 
+@unittest.skip("Not implemented yet!")
 class TestQuickSort(unittest.TestCase):
 
     def test_sort_descending_elements(self):

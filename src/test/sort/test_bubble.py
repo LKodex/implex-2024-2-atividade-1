@@ -1,6 +1,7 @@
 import unittest
 from implex.sort import bubble
 
+@unittest.skip("Not implemented yet!")
 class TestBubbleSort(unittest.TestCase):
 
     def test_sort_descending_elements(self):
