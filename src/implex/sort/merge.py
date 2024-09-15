@@ -11,16 +11,32 @@ def __merge_sort(arr: list, p, r):
         __merge_sort(arr, p, q)
         __merge_sort(arr, q + 1, r)
         __merge(arr, p, q, r)
-    return arr
 
-def __merge(arr: list, p, q, r) -> list:
-    i = 0
-    j = 0
-    for k in range(p, r + 1):
-        if arr[p + i] <= arr[q + j]:
-            arr[k] = arr[p + i]
+def __merge(arr: list, p, q, r):
+    n1 = q - p + 1
+    n2 = r - q
+    L = arr[p:q+1]
+    R = arr[q+1:r+1]
+
+    i = 0  
+    j = 0  
+    k = p  
+
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            arr[k] = L[i]
             i += 1
         else:
-            arr[k] = arr[q + j]
+            arr[k] = R[j]
             j += 1
-    return arr
+        k += 1
+
+    while i < n1:
+        arr[k] = L[i]
+        i += 1
+        k += 1
+
+    while j < n2:
+        arr[k] = R[j]
+        j += 1
+        k += 1
