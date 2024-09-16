@@ -1,44 +1,43 @@
 import unittest
 from implex.sort import heap
 
-@unittest.skip("Not implemented yet!")
 class TestHeapSort(unittest.TestCase):
 
     def test_sort_descending_elements(self):
-        arr = [5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5]
-        sortedArr = heap.sort(arr)
-        expected = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-        self.assertEquals(sortedArr, expected)
-    
-    def test_ordered_elements(self):
-        arr = [-3, -2, -1, 0, 1, 2, 3]
-        sortedArr = heap.sort(arr)
-        expected = [-3, -2, -1, 0, 1, 2, 3]
-        self.assertEquals(sortedArr, expected)
+        arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        sorted_arr = heap.sort(arr)
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        self.assertEqual(sorted_arr, expected)
 
-    def test_empty_list(self):
+    def test_sort_random_elements(self):
+        arr = [3, 6, 2, 7, 5, 8, 1, 10, 9, 4]
+        sorted_arr = heap.sort(arr)
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        self.assertEqual(sorted_arr, expected)
+
+    def test_sort_with_duplicates(self):
+        arr = [4, 2, 2, 5, 3, 1, 4, 2, 3]
+        sorted_arr = heap.sort(arr)
+        expected = [1, 2, 2, 2, 3, 3, 4, 4, 5]
+        self.assertEqual(sorted_arr, expected)
+
+    def test_sort_empty_list(self):
         arr = []
-        sortedArr = heap.sort(arr)
+        sorted_arr = heap.sort(arr)
         expected = []
-        self.assertEquals(sortedArr, expected)
-    
-    def test_one_element(self):
-        arr = [0]
-        sortedArr = heap.sort(arr)
-        expected = [0]
-        self.assertEquals(sortedArr, expected)
-    
-    def test_two_unordered_elements(self):
-        arr = [0, -1]
-        sortedArr = heap.sort(arr)
-        expected = [-1, 0]
-        self.assertEquals(sortedArr, expected)
-    
-    def test_two_ordered_elements(self):
-        arr = [0, 1]
-        sortedArr = heap.sort(arr)
-        expected = [0, 1]
-        self.assertEquals(sortedArr, expected)
+        self.assertEqual(sorted_arr, expected)
+
+    def test_sort_single_element(self):
+        arr = [42]
+        sorted_arr = heap.sort(arr)
+        expected = [42]
+        self.assertEqual(sorted_arr, expected)
+
+    def test_sort_already_sorted(self):
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        sorted_arr = heap.sort(arr)
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        self.assertEqual(sorted_arr, expected)
 
 if __name__ == "__main__":
     unittest.main()
