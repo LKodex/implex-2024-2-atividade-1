@@ -1,3 +1,6 @@
+# Lucas Gonçalves Cordeiro
+# José Vitor Oda Pires
+
 import sys
 import time
 import random
@@ -17,7 +20,7 @@ def run_experiments(algorithms, inc, fim, stp, rpt, vector_generator, label):
     for alg_name in algorithms.keys():
         print(f"{alg_name:<15}", end="")
     print()
-    
+
     for n in range(inc, fim + 1, stp):
         print(f"{n:<10}", end="")
         for alg_name, alg_func in algorithms.items():
